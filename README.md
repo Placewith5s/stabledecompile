@@ -114,8 +114,8 @@ Here is a quick look at it:
 #define _HAS_ZOMBATAR
 #define _HAS_UNLOCK
 // Unused or Restored
-//#define _HAS_LEVELSELECTOR 
-//#define _HAS_MORESCREEN
+#define _HAS_LEVELSELECTOR 
+#define _HAS_MORESCREEN
 #endif
 
 #ifdef _DEBUG
@@ -127,16 +127,16 @@ Here is a quick look at it:
 #define _ALLOW_RESOURCE_PACKS
 
 // Unused or Restored
-//#define _HAS_BLOOM_AND_DOOM_CONTENTS
+#define _HAS_BLOOM_AND_DOOM_CONTENTS
 #define _HAS_EXTENDED_MINIGAMES
-//#define _HAS_UNUSED_ACHIEVEMENTS
+#define _HAS_UNUSED_ACHIEVEMENTS
 
 //Ported from other editions
 #define _MOBILE_MINIGAMES
 #define _DS_MINIGAMES
 //#define _CONSOLE_MINIGAMES
 #define _REPLANTED_SPEED_CONTROL
-//#define _HAS_NEW_GIGA_ZOMBIES
+#define _HAS_NEW_GIGA_ZOMBIES
 //#define _HAS_SCORE_SYSTEM
 
 // Quality Of Life
