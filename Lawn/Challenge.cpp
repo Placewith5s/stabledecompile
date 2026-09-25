@@ -498,6 +498,12 @@ void Challenge::StartLevel()
 	{
 		mBoard->DisplayAdvice(TodReplaceNumberString(_S("[ADVICE_SURVIVE_FLAGS]"), _S("{FLAGS}"), LAST_STAND_FLAGS), MESSAGE_STYLE_BIG_MIDDLE_FAST, ADVICE_SURVIVE_FLAGS);
 	}
+	if ((mApp->mGameMode >= GameMode::GAMEMODE_LAST_STAND_ENDLESS_STAGE_1 &&
+		mApp->mGameMode <= GameMode::GAMEMODE_LAST_STAND_ENDLESS_STAGE_5) &&
+		mSurvivalStage == 0)
+	{
+		mBoard->DisplayAdvice(_S("[ADVICE_SURVIVE_ENDLESS]"), MESSAGE_STYLE_BIG_MIDDLE_FAST, ADVICE_SURVIVE_FLAGS);
+	}
 	if (aGameMode == GAMEMODE_CHALLENGE_ART_CHALLENGE_WALLNUT)
 	{
 		mBoard->DisplayAdvice(_S("[ADVICE_FILL_IN_WALLNUTS]"), MESSAGE_STYLE_HINT_FAST, ADVICE_NONE);
