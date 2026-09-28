@@ -302,8 +302,7 @@ public:
 extern PlantDefinition gPlantDefs[SeedType::NUM_SEED_TYPES];
 ```
 
-The third (int) non-decimal number/s is the plant's recharge time
-The final (int) non-decimal number/s is basically fire rate
+The third (int) non-decimal number/s is the plant's recharge time and the final (int) non-decimal number/s is basically fire rate.
 
 ### Modding Tips
 Use Ctrl + Shift + F to find things from all matching files quickly and Ctrl + F to find things from the selected file. There are going to be lots of copy paste for similar plants, zombies, and levels
