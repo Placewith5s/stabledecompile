@@ -12021,8 +12021,8 @@ bool Board::CanUseGameObject(GameObjectType theGameObject)
 
 void Board::ShakeBoard(int theShakeAmountX, int theShakeAmountY)
 {
-	if ()
-	return;
+	if (!gSexyAppBase->mIsScreenShake)
+		return;
 
 	mShakeCounter = 12;
 	mShakeAmountX = theShakeAmountX;
