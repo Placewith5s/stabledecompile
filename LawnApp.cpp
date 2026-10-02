@@ -1929,6 +1929,7 @@ bool LawnApp::KillNewOptionsDialog()
 	bool wantWindowed = !aNewOptionsDialog->mFullscreenCheckbox->IsChecked();
 	//bool want3D = aNewOptionsDialog->mHardwareAccelerationCheckbox->IsChecked();
 	bool wantHalfspeed = aNewOptionsDialog->mHalfspeedCheckbox->IsChecked();
+	bool wantScreenShake = aNewOptionsDialog->mScreenShakeCheckbox->IsChecked();
 
 	mEnableVsync = aNewOptionsDialog->mHardwareAccelerationCheckbox->IsChecked();
 
@@ -1936,6 +1937,7 @@ bool LawnApp::KillNewOptionsDialog()
 	SDL_SetRenderVSync(mSDLRenderer, mEnableVsync);
 	SwitchScreenMode(wantWindowed, true, false);
 	SwitchSpeedMultiplier(wantHalfspeed);
+	SwitchScreenShake(wantScreenShake);
 
 	KillDialog(Dialogs::DIALOG_NEWOPTIONS);
 	ClearUpdateBacklog();
@@ -4728,6 +4730,17 @@ void LawnApp::SwitchSpeedMultiplier(bool wantHalfspeed)
 	if (aNewOptionsDialog)
 	{
 		aNewOptionsDialog->mHalfspeedCheckbox->SetChecked(mIsHalfspeed);
+	}
+}
+
+void LawnApp::SwitchScreenShake(bool wantScreenShake)
+{
+	mIsScreenShake = wantScreenShake;
+
+	NewOptionsDialog* aNewOptionsDialog = (NewOptionsDialog*)GetDialog(Dialogs::DIALOG_NEWOPTIONS);
+	if (aNewOptionsDialog)
+	{
+		aNewOptionsDialog->mScreenShakeCheckbox->SetChecked(mIsScreenShake);
 	}
 }
 
