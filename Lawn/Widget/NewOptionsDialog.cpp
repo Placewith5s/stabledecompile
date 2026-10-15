@@ -62,6 +62,7 @@ NewOptionsDialog::NewOptionsDialog(LawnApp* theApp, bool theFromGameSelector) :
     mHardwareAccelerationCheckbox = MakeNewCheckbox(NewOptionsDialog::NewOptionsDialog_HardwareAcceleration, this, theApp->mEnableVsync);
     mHalfspeedCheckbox = MakeNewCheckbox(NewOptionsDialog::NewOptionsDialog_Halfspeed, this, theApp->mIsHalfspeed);
     mScreenShakeCheckbox = MakeNewCheckbox(NewOptionsDialog::NewOptionsDialog_ScreenShake, this, theApp->mIsScreenShake);
+    mRealHighContrastCheckbox = MakeNewCheckbox(NewOptionsDialog::NewOptionsDialog_ScreenShake, this, theApp->mIsRealHighContrast);
 
     if (mFromGameSelector)
     {
@@ -95,6 +96,10 @@ NewOptionsDialog::NewOptionsDialog(LawnApp* theApp, bool theFromGameSelector) :
     {
         mAlmanacButton->SetVisible(false);
     }
+    else {
+        mScreenShakeCheckbox->SetVisible(false);
+        mRealHighContrastCheckbox->SetVisible(false);
+    }
 
     //if (mFromGameSelector)
     //{
@@ -120,6 +125,7 @@ NewOptionsDialog::~NewOptionsDialog()
     delete mHardwareAccelerationCheckbox;
     delete mHalfspeedCheckbox;
     delete mScreenShakeCheckbox;
+    delete mRealHighContrastCheckbox;
     delete mAlmanacButton;
     delete mRestartButton;
     delete mBackToMainButton;
@@ -151,6 +157,7 @@ void NewOptionsDialog::AddedToManager(Sexy::WidgetManager* theWidgetManager)
     AddWidget(mFullscreenCheckbox);
     AddWidget(mHalfspeedCheckbox);
     AddWidget(mScreenShakeCheckbox);
+    AddWidget(mRealHighContrastCheckbox);
     AddWidget(mBackToGameButton);
 }
 
@@ -170,6 +177,7 @@ void NewOptionsDialog::RemovedFromManager(Sexy::WidgetManager* theWidgetManager)
     RemoveWidget(mFullscreenCheckbox);
     RemoveWidget(mHalfspeedCheckbox);
     RemoveWidget(mScreenShakeCheckbox);
+    RemoveWidget(mRealHighContrastCheckbox);
     RemoveWidget(mBackToGameButton);
 }
 
@@ -183,6 +191,7 @@ void NewOptionsDialog::Resize(int theX, int theY, int theWidth, int theHeight)
     mFullscreenCheckbox->Resize(351, 255, 46, 45);
     mHalfspeedCheckbox->Resize(351, 294, 46, 45);
     mScreenShakeCheckbox->Resize(351, 333, 46, 45);
+    mRealHighContrastCheckbox->Resize(351, 372, 46, 45);
     mAlmanacButton->Resize(132, 339, 209, 46);
     mRestartButton->Resize(mAlmanacButton->mX, mAlmanacButton->mY + 53, 209, 46);
     mBackToMainButton->Resize(mRestartButton->mX, mRestartButton->mY + 53, 209, 46);
@@ -200,6 +209,7 @@ void NewOptionsDialog::Resize(int theX, int theY, int theWidth, int theHeight)
         mFullscreenCheckbox->mY += 25;
         mHalfspeedCheckbox->mY += 31;
         mScreenShakeCheckbox->mY += 38;
+        mRealHighContrastCheckbox->mY += 44;
 
         /*mGameplayButton->mY += 69;
         mControllerButton->mY += 69;
@@ -224,6 +234,7 @@ void NewOptionsDialog::Draw(Sexy::Graphics* g)
     int aFullScreenOffset = 0;
     int aHalfSpeedOffset = 0;
     int aScreenShakeOffset = 0;
+    int aRealHighContrastOffset = 0;
     if (mFromGameSelector)
     {
         aMusicOffset = 6;
@@ -232,6 +243,7 @@ void NewOptionsDialog::Draw(Sexy::Graphics* g)
         aFullScreenOffset = 25;
         aHalfSpeedOffset = 31;
         aScreenShakeOffset = 38;
+        aRealHighContrastOffset = 44;
     }
     Sexy::Color aTextColor(107, 109, 145);
 
@@ -252,6 +264,7 @@ void NewOptionsDialog::Draw(Sexy::Graphics* g)
         TodDrawString(g, TodStringTranslate(_S("[FULLSCREEN_LABEL]")), 339, 283 + aFullScreenOffset, FONT_DWARVENTODCRAFT18, aTextColor, DrawStringJustification::DS_ALIGN_RIGHT);
         TodDrawString(g, TodStringTranslate(_S("[HALF_SPEED_LABEL]")), 339, 323 + aHalfSpeedOffset, FONT_DWARVENTODCRAFT18, aTextColor, DrawStringJustification::DS_ALIGN_RIGHT);
         TodDrawString(g, TodStringTranslate(_S("[SCREEN_SHAKE_LABEL]")), 339, 363 + aScreenShakeOffset, FONT_DWARVENTODCRAFT18, aTextColor, DrawStringJustification::DS_ALIGN_RIGHT);
+        TodDrawString(g, TodStringTranslate(_S("[REAL_HIGH_CONTRAST_LABEL]")), 339, 403 + aRealHighContrastOffset, FONT_DWARVENTODCRAFT18, aTextColor, DrawStringJustification::DS_ALIGN_RIGHT);
     }
 }
 
