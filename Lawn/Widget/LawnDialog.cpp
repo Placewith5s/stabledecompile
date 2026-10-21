@@ -507,6 +507,10 @@ void GameOverDialog::ButtonDepress(int theId)
         {
             mApp->ShowChallengeScreen(ChallengePage::CHALLENGE_PAGE_PUZZLE);
         }
+        else if (mApp->IsLastStandMode())
+        {
+            mApp->ShowChallengeScreen(ChallengePage::CHALLENGE_PAGE_LAST_STAND);
+        }
         else if (mApp->IsAdventureMode())
         {
             mApp->ShowGameSelector();

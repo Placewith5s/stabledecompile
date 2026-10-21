@@ -336,6 +336,7 @@ public:
 	void							BetaAddFile(std::list<std::string>& theUploadFileList, std::string theFileName, std::string theShortName);
 	bool							CanPauseNow();
 	/*inline*/ bool					IsPuzzleMode();
+	/*inline*/ bool					IsLastStandMode();
 	/*inline*/ bool					IsChallengeMode();
 	static /*inline*/ bool			IsEndlessIZombie(GameMode theGameMode);
 	void							CrazyDaveDoneHanding();
