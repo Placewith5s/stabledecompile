@@ -2575,6 +2575,11 @@ void LawnApp::CheckForGameEnd()
 			ShowChallengeScreen(ChallengePage::CHALLENGE_PAGE_PUZZLE);
 		}
 	}
+	else if (IsLastStandMode())
+	{
+		KillBoard();
+		ShowChallengeScreen(ChallengePage::CHALLENGE_PAGE_LAST_STAND);
+	}
 	else
 	{
 		KillBoard();
@@ -3282,10 +3287,19 @@ bool LawnApp::IsPuzzleMode()
 		(mGameMode >= GameMode::GAMEMODE_PUZZLE_I_ZOMBIE_1 && mGameMode <= GameMode::GAMEMODE_PUZZLE_I_ZOMBIE_ENDLESS);
 }
 
+bool LawnApp::IsLastStandMode()
+{
+	return
+		(mGameMode >= GameMode::GAMEMODE_LAST_STAND_STAGE_1 &&
+			mGameMode <= GameMode::GAMEMODE_LAST_STAND_ENDLESS_STAGE_5) ||
+		(mGameMode >= GameMode::GAMEMODE_LAST_STAND_STAGE_6 &&
+			mGameMode <= GameMode::GAMEMODE_LAST_STAND_ENDLESS_STAGE_6);
+}
+
 //0x453710
 bool LawnApp::IsChallengeMode()
 {
-	return !IsAdventureMode() && !IsPuzzleMode() && !IsSurvivalMode();
+	return !IsAdventureMode() && !IsLastStandMode() && !IsPuzzleMode() && !IsSurvivalMode();
 }
 
 bool LawnApp::IsSurvivalNormal(GameMode theGameMode)
