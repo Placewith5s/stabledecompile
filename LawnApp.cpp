@@ -3291,9 +3291,7 @@ bool LawnApp::IsLastStandMode()
 {
 	return
 		(mGameMode >= GameMode::GAMEMODE_LAST_STAND_STAGE_1 &&
-			mGameMode <= GameMode::GAMEMODE_LAST_STAND_ENDLESS_STAGE_5) ||
-		(mGameMode >= GameMode::GAMEMODE_LAST_STAND_STAGE_6 &&
-			mGameMode <= GameMode::GAMEMODE_LAST_STAND_ENDLESS_STAGE_6);
+			mGameMode <= GameMode::GAMEMODE_LAST_STAND_ENDLESS_STAGE_5);
 }
 
 //0x453710
