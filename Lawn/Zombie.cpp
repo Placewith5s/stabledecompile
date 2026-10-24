@@ -57,7 +57,7 @@ ZombieDefinition gZombieDefs[NUM_ZOMBIE_TYPES] = {  //0x69DA80
     { ZOMBIE_GATLING_HEAD,      REANIM_ZOMBIE,              3,      99,     10,     2000,   _S("ZOMBIE") },
     { ZOMBIE_SQUASH_HEAD,       REANIM_ZOMBIE,              3,      99,     10,     2000,   _S("ZOMBIE") },
     { ZOMBIE_TALLNUT_HEAD,      REANIM_ZOMBIE_ZOMBOTANY,              4,      99,     10,     2000,   _S("ZOMBIE") },
-    { ZOMBIE_PEA_HEAD,          REANIM_ZOMBIE,              1,      48,     1,      4000,   _S("ZOMBIE") },
+    { ZOMBIE_REDEYE_GARGANTUAR,          REANIM_GARGANTUAR,              10,      48,     15,      6000,   _S("ZOMBIE") },
 #ifdef _HAS_NEW_GIGA_ZOMBIES
     { ZOMBIE_BLACK_FOOTBALL,    REANIM_ZOMBIE_BLACKFOOTBALL,7,      16,     5,      2000,   _S("BLACK_FOOTBALL_ZOMBIE") },
     { ZOMBIE_TRASHCAN,          REANIM_ZOMBIE,              4,      13,     5,      3500,   _S("TRASHCAN_ZOMBIE") },
